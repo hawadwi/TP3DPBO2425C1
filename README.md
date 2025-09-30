@@ -63,56 +63,61 @@ Pelanggan punya bonus tambahan berupa poin loyalitas. Poin ini disimpan di class
 - Mulai dari class dasar → InformasiKontak
 Program dimulai dengan pondasi: semua orang dan perusahaan punya nomor HP, email, dan alamat. Biar nggak nulis ulang di setiap class, atribut ini disatukan dalam class dasar. Nantinya class lain bisa tinggal mewarisi (inheritance) bagian ini.
 
-Cabang pertama: Orang dan Perusahaan
+- Cabang pertama: Orang dan Perusahaan
 Dari InformasiKontak, program bercabang jadi dua jalur besar:
-
-Orang → menyimpan data manusia (nama, usia, tanggal lahir).
-
-Perusahaan → menyimpan data institusi (nama perusahaan, tahun berdiri, bidang usaha).
+  - Orang → menyimpan data manusia (nama, usia, tanggal lahir).
+  - Perusahaan → menyimpan data institusi (nama perusahaan, tahun berdiri, bidang usaha).
 Jadi ada dua tipe entitas utama: individu dan lembaga.
 
-Cabang kedua dari Orang: Pegawai & Pelanggan
+- Cabang kedua dari Orang: Pegawai & Pelanggan
+  - Pegawai → orang yang bekerja di supermarket, ditambah data spesifik seperti kode pegawai, jabatan, gaji, dan shift kerja.
+  - Pelanggan → orang yang belanja, dengan atribut khusus seperti kode pelanggan, saldo, jumlah transaksi, status membership, dan riwayat belanja. Di sini, pelanggan juga punya LoyaltyPoint sebagai bonus tambahan (composition/has-a).
 
-Pegawai → orang yang bekerja di supermarket, ditambah data spesifik seperti kode pegawai, jabatan, gaji, dan shift kerja.
+- Cabang kedua dari Perusahaan: Supplier & Supermarket
+  - Supplier → perusahaan pemasok barang ke supermarket. Punya kode supplier, daftar produk yang disediakan, dan lama kerjasama.
+  - Supermarket → perusahaan ritel yang langsung menjual barang ke konsumen. Ada atribut tambahan seperti kode supermarket, lokasi, luas toko, dan jam operasional.
 
-Pelanggan → orang yang belanja, dengan atribut khusus seperti kode pelanggan, saldo, jumlah transaksi, status membership, dan riwayat belanja.
-→ Di sini, pelanggan juga punya LoyaltyPoint sebagai bonus tambahan (composition/has-a).
-
-Cabang kedua dari Perusahaan: Supplier & Supermarket
-
-Supplier → perusahaan pemasok barang ke supermarket. Punya kode supplier, daftar produk yang disediakan, dan lama kerjasama.
-
-Supermarket → perusahaan ritel yang langsung menjual barang ke konsumen. Ada atribut tambahan seperti kode supermarket, lokasi, luas toko, dan jam operasional.
-
-Produk sebagai entitas penting (aggregation dengan supermarket)
+- Produk sebagai entitas penting (aggregation dengan supermarket)
 Produk dibuat sebagai class terpisah karena bukan orang dan bukan perusahaan. Tapi produk sangat penting:
+  - Supplier menyediakan produk.
+  - Supermarket menjual produk (hubungan aggregation → supermarket punya banyak produk, tapi produk juga bisa ada di supermarket lain).
+  - Pelanggan membeli produk (hubungan association → pelanggan hanya menggunakan produk dalam transaksi).
 
-Supplier menyediakan produk.
+- Bagian Main / Program Utama
+  - Pertama, program menyiapkan array/list/daftar kosong untuk menampung banyak data (produk, pelanggan, pegawai, supplier, supermarket).
+  - Lalu, ditampilkan dulu pesan “belum ada data” → ini untuk menunjukkan kondisi awal.
+  - Setelah itu, data dimasukkan secara hardcode (pakai constructor masing-masing class untuk bikin objek → misalnya Produk("PR001", "Beras 5kg", "70000", 50)).
+  - Setiap objek yang dibuat langsung ditampilkan (print/println/cout), agar terlihat detail isinya.
+  - Di bagian akhir, semua objek juga disimpan ke array/list untuk mensimulasikan database sederhana.
+  - Alur Data dari Awal sampai Akhir
+  - Input awal → belum ada data.
+  - Pembuatan objek → isi data pelanggan, pegawai, produk, supplier, supermarket.
+  - Output → tampilkan data yang baru saja dibuat.
+  - Penyimpanan → simpan semua objek ke dalam array/list untuk dipakai lagi jika perlu.
+  - Akhir program → program berhenti setelah semua data berhasil ditampilkan.
+ 
+#### DOKUMENTASI
 
-Supermarket menjual produk (hubungan aggregation → supermarket punya banyak produk, tapi produk juga bisa ada di supermarket lain).
+CPP 
 
-Pelanggan membeli produk (hubungan association → pelanggan hanya menggunakan produk dalam transaksi).
+<img width="1076" height="720" alt="1" src="https://github.com/user-attachments/assets/4d5f2bca-860c-4562-89a3-4efd519c34bd" />
 
-Bagian Main / Program Utama
+<img width="533" height="720" alt="2" src="https://github.com/user-attachments/assets/fe5e4c5f-997a-4ca1-863e-07e6ffffaa73" />
 
-Pertama, program menyiapkan array/list/daftar kosong untuk menampung banyak data (produk, pelanggan, pegawai, supplier, supermarket).
+PYTHON
 
-Lalu, ditampilkan dulu pesan “belum ada data” → ini untuk menunjukkan kondisi awal.
+<img width="990" height="720" alt="1" src="https://github.com/user-attachments/assets/53ec286a-870c-4a19-9700-124d93dd0edb" />
 
-Setelah itu, data dimasukkan secara hardcode (pakai constructor masing-masing class untuk bikin objek → misalnya Produk("PR001", "Beras 5kg", "70000", 50)).
+<img width="543" height="720" alt="2" src="https://github.com/user-attachments/assets/4d1e6393-c41c-4c42-ba3f-fe62e2e96e97" />
 
-Setiap objek yang dibuat langsung ditampilkan (print/println/cout), agar terlihat detail isinya.
+<img width="518" height="720" alt="3" src="https://github.com/user-attachments/assets/b55e6441-3e11-45f3-8e0a-e8a6874facd2" />
 
-Di bagian akhir, semua objek juga disimpan ke array/list untuk mensimulasikan database sederhana.
+JAVA
 
-Alur Data dari Awal sampai Akhir
+<img width="930" height="720" alt="1" src="https://github.com/user-attachments/assets/82d56088-aa69-4607-b703-51bbe183c6df" />
 
-Input awal → belum ada data.
+<img width="675" height="684" alt="2" src="https://github.com/user-attachments/assets/7a406afc-382b-44a9-83f7-e4a1f6da7019" />
 
-Pembuatan objek → isi data pelanggan, pegawai, produk, supplier, supermarket.
+<img width="540" height="720" alt="3" src="https://github.com/user-attachments/assets/f8174076-b056-4c9f-b5cc-4ba7e7b474f0" />
 
-Output → tampilkan data yang baru saja dibuat.
 
-Penyimpanan → simpan semua objek ke dalam array/list untuk dipakai lagi jika perlu.
-
-Akhir program → program berhenti setelah semua data berhasil ditampilkan.
