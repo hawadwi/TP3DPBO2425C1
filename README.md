@@ -100,11 +100,15 @@ Produk dibuat sebagai class terpisah karena bukan orang dan bukan perusahaan. Ta
 
 CPP 
 
+
 <img width="1076" height="720" alt="1" src="https://github.com/user-attachments/assets/4d5f2bca-860c-4562-89a3-4efd519c34bd" />
 
 <img width="533" height="720" alt="2" src="https://github.com/user-attachments/assets/fe5e4c5f-997a-4ca1-863e-07e6ffffaa73" />
 
+
+
 PYTHON
+
 
 <img width="990" height="720" alt="1" src="https://github.com/user-attachments/assets/53ec286a-870c-4a19-9700-124d93dd0edb" />
 
@@ -112,7 +116,10 @@ PYTHON
 
 <img width="518" height="720" alt="3" src="https://github.com/user-attachments/assets/b55e6441-3e11-45f3-8e0a-e8a6874facd2" />
 
+
+
 JAVA
+
 
 <img width="930" height="720" alt="1" src="https://github.com/user-attachments/assets/82d56088-aa69-4607-b703-51bbe183c6df" />
 
